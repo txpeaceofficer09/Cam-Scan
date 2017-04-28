@@ -18,7 +18,7 @@ function checkCam($ip) {
 }
 
 function getCam($ip) {
-	$arr = file($dir.'log.txt');
+	$arr = file('/home/someone/camscan/log.txt');
 
 	foreach($arr AS $cam) {
 		$data = explode(',', $cam);
