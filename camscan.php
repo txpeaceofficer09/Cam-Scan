@@ -1,5 +1,13 @@
 <?php
 
+error_reporting(E_ALL);
+set_time_limit(0);
+ob_implicit_flush();
+
+header("Cache-Control: no-cache, no-store, must-revalidate"); // HTTP 1.1.
+header("Pragma: no-cache"); // HTTP 1.0.
+header("Expires: 0"); // Proxies.
+
 $cams = file('/home/someone/camscan/log.txt'); // Get an array of all the cams from the log.txt file.
 $updated = array('ONLINE'=>array(),'OFFLINE'=>array()); // Initialize an array to hold our cameras that have changed their status.
 $admins = array(
